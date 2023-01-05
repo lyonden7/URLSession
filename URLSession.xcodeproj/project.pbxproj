@@ -15,6 +15,8 @@
 		28EFE77F2964E6510060B854 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE77E2964E6510060B854 /* Category.swift */; };
 		28EFE7852964E8060060B854 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE7842964E8060060B854 /* MainViewController.swift */; };
 		28EFE7882966570E0060B854 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE7872966570E0060B854 /* NetworkManager.swift */; };
+		28EFE78A29665F800060B854 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE78929665F800060B854 /* CategoriesViewController.swift */; };
+		28EFE78D29665FC00060B854 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE78C29665FC00060B854 /* CategoryViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		28EFE77E2964E6510060B854 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		28EFE7842964E8060060B854 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		28EFE7872966570E0060B854 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		28EFE78929665F800060B854 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		28EFE78C29665FC00060B854 /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				28EFE7822964E7360060B854 /* ViewControllers */,
+				28EFE78B29665FA80060B854 /* Views */,
 				28EFE77D2964E63F0060B854 /* Models */,
 				28EFE786296656490060B854 /* Services */,
 				28EFE7802964E71E0060B854 /* Storyboards */,
@@ -101,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				28EFE7842964E8060060B854 /* MainViewController.swift */,
+				28EFE78929665F800060B854 /* CategoriesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -119,6 +125,14 @@
 				28EFE7872966570E0060B854 /* NetworkManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		28EFE78B29665FA80060B854 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				28EFE78C29665FC00060B854 /* CategoryViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,9 +208,11 @@
 			files = (
 				28EFE76A2964E2080060B854 /* AppDelegate.swift in Sources */,
 				28EFE76C2964E2080060B854 /* SceneDelegate.swift in Sources */,
+				28EFE78A29665F800060B854 /* CategoriesViewController.swift in Sources */,
 				28EFE7882966570E0060B854 /* NetworkManager.swift in Sources */,
 				28EFE77F2964E6510060B854 /* Category.swift in Sources */,
 				28EFE7852964E8060060B854 /* MainViewController.swift in Sources */,
+				28EFE78D29665FC00060B854 /* CategoryViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
