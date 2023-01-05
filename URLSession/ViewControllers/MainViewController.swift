@@ -12,6 +12,29 @@ enum Link: String {
     case ingredientsURL = "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
 }
 
+enum Alert {
+    case success
+    case failed
+    
+    var title: String {
+        switch self {
+        case .success:
+            return "Success"
+        case .failed:
+            return "Failed"
+        }
+    }
+    
+    var message: String {
+        switch self {
+        case .success:
+            return "You can see the results in the Debug area"
+        case .failed:
+            return "You can see error in the Debug Area"
+        }
+    }
+}
+
 class MainViewController: UIViewController {
 
     // MARK: - IB Actions
@@ -21,25 +44,11 @@ class MainViewController: UIViewController {
     
     
     // MARK: - Private Methods
-    private func successAlert() {
+    private func showAlert(_ alert: Alert) {
         DispatchQueue.main.async {
             let alert = UIAlertController(
-                title: "Success",
-                message: "You can see the results in the Debug area",
-                preferredStyle: .alert
-            )
-            
-            let okAction = UIAlertAction(title: "OK", style: .default)
-            alert.addAction(okAction)
-            self.present(alert, animated: true)
-        }
-    }
-    
-    private func failedAlert() {
-        DispatchQueue.main.async {
-            let alert = UIAlertController(
-                title: "Failed",
-                message: "You can see error in the Debug Area",
+                title: alert.title,
+                message: alert.message,
                 preferredStyle: .alert)
             
             let okAction = UIAlertAction(title: "OK", style: .default)
@@ -47,7 +56,6 @@ class MainViewController: UIViewController {
             self.present(alert, animated: true)
         }
     }
-    
 }
 
 // MARK: - Networking
@@ -63,10 +71,10 @@ extension MainViewController {
             
             do {
                 let categories = try JSONDecoder().decode(Categories.self, from: data)
-                self?.successAlert()
+                self?.showAlert(Alert.success)
                 print(categories)
             } catch let error {
-                self?.failedAlert()
+                self?.showAlert(Alert.failed)
                 print(error)
             }
             
@@ -84,10 +92,10 @@ extension MainViewController {
             
             do {
                 let meals = try JSONDecoder().decode(Meals.self, from: data)
-                self?.successAlert()
+                self?.showAlert(Alert.success)
                 print(meals)
             } catch let error {
-                self?.failedAlert()
+                self?.showAlert(Alert.failed)
                 print(error)
             }
         }.resume()
