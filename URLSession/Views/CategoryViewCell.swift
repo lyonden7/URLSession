@@ -16,10 +16,10 @@ class CategoryViewCell: UITableViewCell {
     
     // MARK: - Configure cell
     func configure(with category: Category) {
-        categoryNameLabel.text = category.strCategory
-        categoryIDLabel.text = "ID: \(category.idCategory)"
+        categoryNameLabel.text = category.categoryName
+        categoryIDLabel.text = "ID: \(category.categoryID)"
         
-        guard let url = URL(string: category.strCategoryThumb) else { return }
+        guard let url = URL(string: category.categoryImageURL) else { return }
         DispatchQueue.global().async { [weak self] in
             guard let imageData = try? Data(contentsOf: url) else { return }
             DispatchQueue.main.async {

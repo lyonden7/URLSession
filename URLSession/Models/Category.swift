@@ -6,10 +6,17 @@
 //
 
 struct Category: Decodable {
-    let idCategory: String
-    let strCategory: String
-    let strCategoryThumb: String
+    let categoryID: String
+    let categoryName: String
+    let categoryImageURL: String
 //    let strCategoryDescription: String
+    
+    enum CodingKeys: String, CodingKey {
+        case categoryID = "idCategory"
+        case categoryName = "strCategory"
+        case categoryImageURL = "strCategoryThumb"
+//        case categoryDescription = "strCategoryDescription"
+    }
 }
 
 struct Categories: Decodable {
@@ -17,9 +24,15 @@ struct Categories: Decodable {
 }
 
 struct Ingredient: Decodable {
-    let idIngredient: String
-    let strIngredient: String
+    let ingredientID: String
+    let ingredientName: String
 //    let strDescription: String
+    
+    enum CodingKeys: String, CodingKey {
+        case ingredientID = "idIngredient"
+        case ingredientName = "strIngredient"
+//        case ingredientDescription = "strDescription"
+    }
 }
 
 struct Meals: Decodable {
