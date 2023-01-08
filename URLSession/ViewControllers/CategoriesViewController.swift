@@ -36,6 +36,13 @@ class CategoriesViewController: UITableViewController {
 
         return cell
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let categoryDetailVC = segue.destination as? CategoryDetailViewController else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        categoryDetailVC.category = categories[indexPath.row]
+    }
 }
 
 // MARK: - Table View Delegate
@@ -52,13 +59,11 @@ extension CategoriesViewController {
 // MARK: - Networking
 extension CategoriesViewController {
     private func fetchCategories() {
-        NetworkManager.shared.fetchCategories(from: Link.categoriesURL.rawValue) { [weak self] result in
+        NetworkManager.shared.fetch(Categories.self, from: Link.categoriesURL.rawValue) { [weak self] result in
             switch result {
             case .success(let categories):
                 self?.categories = categories.categories
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
+                self?.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }

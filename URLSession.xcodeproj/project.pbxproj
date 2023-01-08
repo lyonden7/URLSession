@@ -13,10 +13,11 @@
 		28EFE7732964E20A0060B854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EFE7722964E20A0060B854 /* Assets.xcassets */; };
 		28EFE7762964E20A0060B854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28EFE7742964E20A0060B854 /* LaunchScreen.storyboard */; };
 		28EFE77F2964E6510060B854 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE77E2964E6510060B854 /* Category.swift */; };
-		28EFE7852964E8060060B854 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE7842964E8060060B854 /* MainViewController.swift */; };
 		28EFE7882966570E0060B854 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE7872966570E0060B854 /* NetworkManager.swift */; };
 		28EFE78A29665F800060B854 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE78929665F800060B854 /* CategoriesViewController.swift */; };
 		28EFE78D29665FC00060B854 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE78C29665FC00060B854 /* CategoryViewCell.swift */; };
+		28EFE791296A5A960060B854 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE790296A5A960060B854 /* CategoryDetailViewController.swift */; };
+		28EFE793296A657E0060B854 /* MealViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE792296A657E0060B854 /* MealViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +29,11 @@
 		28EFE7752964E20A0060B854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28EFE7772964E20A0060B854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28EFE77E2964E6510060B854 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		28EFE7842964E8060060B854 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		28EFE7872966570E0060B854 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		28EFE78929665F800060B854 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		28EFE78C29665FC00060B854 /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
+		28EFE790296A5A960060B854 /* CategoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewController.swift; sourceTree = "<group>"; };
+		28EFE792296A657E0060B854 /* MealViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +107,8 @@
 		28EFE7822964E7360060B854 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				28EFE7842964E8060060B854 /* MainViewController.swift */,
 				28EFE78929665F800060B854 /* CategoriesViewController.swift */,
+				28EFE790296A5A960060B854 /* CategoryDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				28EFE78C29665FC00060B854 /* CategoryViewCell.swift */,
+				28EFE792296A657E0060B854 /* MealViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,12 +209,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EFE791296A5A960060B854 /* CategoryDetailViewController.swift in Sources */,
 				28EFE76A2964E2080060B854 /* AppDelegate.swift in Sources */,
 				28EFE76C2964E2080060B854 /* SceneDelegate.swift in Sources */,
+				28EFE793296A657E0060B854 /* MealViewCell.swift in Sources */,
 				28EFE78A29665F800060B854 /* CategoriesViewController.swift in Sources */,
 				28EFE7882966570E0060B854 /* NetworkManager.swift in Sources */,
 				28EFE77F2964E6510060B854 /* Category.swift in Sources */,
-				28EFE7852964E8060060B854 /* MainViewController.swift in Sources */,
 				28EFE78D29665FC00060B854 /* CategoryViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

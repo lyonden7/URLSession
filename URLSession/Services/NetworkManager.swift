@@ -9,7 +9,8 @@ import Foundation
 
 enum Link: String {
     case categoriesURL = "https://www.themealdb.com/api/json/v1/1/categories.php"
-    case ingredientsURL = "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
+//    case categoryURL = "www.themealdb.com/api/json/v1/1/filter.php?c="
+//    case ingredientsURL = "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
 }
 
 enum NetworkError: Error {
@@ -39,7 +40,7 @@ class NetworkManager {
         }
     }
     
-    func fetchCategories(from url: String, completion: @escaping(Result<Categories, NetworkError>) -> Void) {
+    func fetch<T: Decodable>(_ type: T.Type, from url: String, completion: @escaping(Result<T, NetworkError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.invalidURL))
             return
@@ -52,9 +53,9 @@ class NetworkManager {
             }
             
             do {
-                let categories = try JSONDecoder().decode(Categories.self, from: data)
+                let type = try JSONDecoder().decode(T.self, from: data)
                 DispatchQueue.main.async {
-                    completion(.success(categories))
+                    completion(.success(type))
                 }
             } catch {
                 completion(.failure(.decodingError))
