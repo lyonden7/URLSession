@@ -7,11 +7,6 @@
 
 import UIKit
 
-enum Link: String {
-    case categoryURL = "https://www.themealdb.com/api/json/v1/1/categories.php"
-    case ingredientsURL = "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
-}
-
 enum Alert {
     case success
     case failed

@@ -19,11 +19,12 @@ class CategoryViewCell: UITableViewCell {
         categoryNameLabel.text = category.categoryName
         categoryIDLabel.text = "ID: \(category.categoryID)"
         
-        guard let url = URL(string: category.categoryImageURL) else { return }
-        DispatchQueue.global().async { [weak self] in
-            guard let imageData = try? Data(contentsOf: url) else { return }
-            DispatchQueue.main.async {
+        NetworkManager.shared.fetchImage(from: category.categoryImageURL) { [weak self] result in
+            switch result {
+            case .success(let imageData):
                 self?.categoryImageView.image = UIImage(data: imageData)
+            case .failure(let error):
+                print(error)
             }
         }
     }
