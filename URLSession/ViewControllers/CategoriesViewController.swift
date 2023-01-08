@@ -18,7 +18,6 @@ class CategoriesViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         categories.count
     }
@@ -37,7 +36,6 @@ class CategoriesViewController: UITableViewController {
 
         return cell
     }
-
 }
 
 // MARK: - Table View Delegate
@@ -45,34 +43,27 @@ extension CategoriesViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         60
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
-
 
 // MARK: - Networking
 extension CategoriesViewController {
     private func fetchCategories() {
-        guard let url = URL(string: Link.categoryURL.rawValue) else { return }
-        
-        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            do {
-                let categories = try JSONDecoder().decode(Categories.self, from: data)
+        NetworkManager.shared.fetchCategories(from: Link.categoriesURL.rawValue) { [weak self] result in
+            switch result {
+            case .success(let categories):
                 self?.categories = categories.categories
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                 }
-                print(categories)
-            } catch let error {
+            case .failure(let error):
                 print(error)
             }
-            
-        }.resume()
+        }
     }
-
 }
 
 

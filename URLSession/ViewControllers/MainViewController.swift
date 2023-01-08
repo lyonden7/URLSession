@@ -56,7 +56,7 @@ class MainViewController: UIViewController {
 // MARK: - Networking
 extension MainViewController {
     private func fetchCategories() {
-        guard let url = URL(string: Link.categoryURL.rawValue) else { return }
+        guard let url = URL(string: Link.categoriesURL.rawValue) else { return }
         
         URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let data = data else {

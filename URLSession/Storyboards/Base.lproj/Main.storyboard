@@ -51,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="1121.25" y="748.94366197183103"/>
         </scene>
-        <!--Categories View Controller-->
+        <!--Categories-->
         <scene sceneID="lTi-Nr-phe">
             <objects>
                 <tableViewController id="DjO-Tn-1uc" customClass="CategoriesViewController" customModule="URLSession" customModuleProvider="target" sceneMemberID="viewController">
@@ -113,7 +113,7 @@
                             <outlet property="delegate" destination="DjO-Tn-1uc" id="pa8-e0-Y1F"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="niV-XO-6d7"/>
+                    <navigationItem key="navigationItem" title="Categories" id="niV-XO-6d7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asu-SD-Nd0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,8 +142,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h95-0v-dKy" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xBr-WK-hTS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="xBr-WK-hTS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
