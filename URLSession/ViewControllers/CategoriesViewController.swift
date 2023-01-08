@@ -24,22 +24,31 @@ class CategoriesViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: "categoryCell",
+            for: indexPath)
+                as? CategoryViewCell
+        else {
+            return UITableViewCell()
+        }
 
         let category = categories[indexPath.row]
-        var content = cell.defaultContentConfiguration()
-        
-        content.text = category.strCategory
-        
-        cell.contentConfiguration = content
+        cell.configure(with: category)
 
         return cell
     }
 
 }
 
+// MARK: - Table View Delegate
+extension CategoriesViewController {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
+    }
+}
 
 
+// MARK: - Networking
 extension CategoriesViewController {
     private func fetchCategories() {
         guard let url = URL(string: Link.categoryURL.rawValue) else { return }
