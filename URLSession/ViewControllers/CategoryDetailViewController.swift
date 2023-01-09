@@ -37,10 +37,10 @@ class CategoryDetailViewController: UIViewController {
 // MARK: - Setup View
 extension CategoryDetailViewController {
     private func setupView() {
-        title = category.categoryName
-        categoryDescriptionTextView.text = category.categoryDescription
+        title = category.name
+        categoryDescriptionTextView.text = category.description
         
-        NetworkManager.shared.fetchImage(from: category.categoryImageURL) { [weak self] result in
+        NetworkManager.shared.fetchImage(from: category.imageURL) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.categoryImageView.image = UIImage(data: imageData)

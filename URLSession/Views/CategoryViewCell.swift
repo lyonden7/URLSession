@@ -16,10 +16,10 @@ class CategoryViewCell: UITableViewCell {
     
     // MARK: - Configure cell
     func configure(with category: Category) {
-        categoryNameLabel.text = category.categoryName
-        categoryIDLabel.text = "ID: \(category.categoryID)"
+        categoryNameLabel.text = category.name
+        categoryIDLabel.text = "ID: \(category.id)"
         
-        NetworkManager.shared.fetchImage(from: category.categoryImageURL) { [weak self] result in
+        NetworkManager.shared.fetchImage(from: category.imageURL) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.categoryImageView.image = UIImage(data: imageData)

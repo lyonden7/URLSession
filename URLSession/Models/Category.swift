@@ -6,16 +6,16 @@
 //
 
 struct Category: Decodable {
-    let categoryID: String
-    let categoryName: String
-    let categoryImageURL: String
-    let categoryDescription: String
+    let id: String
+    let name: String
+    let imageURL: String
+    let description: String
     
     enum CodingKeys: String, CodingKey {
-        case categoryID = "idCategory"
-        case categoryName = "strCategory"
-        case categoryImageURL = "strCategoryThumb"
-        case categoryDescription = "strCategoryDescription"
+        case id = "idCategory"
+        case name = "strCategory"
+        case imageURL = "strCategoryThumb"
+        case description = "strCategoryDescription"
     }
 }
 

@@ -16,10 +16,10 @@ class MealViewCell: UITableViewCell {
     
     // MARK: - Configure cell
     func configure(wiht meal: Meal) {
-        mealNameLabel.text = meal.mealName
-        mealIDLabel.text = "ID: \(meal.mealID)"
+        mealNameLabel.text = meal.name
+        mealIDLabel.text = "ID: \(meal.id)"
         
-        NetworkManager.shared.fetchImage(from: meal.mealImageURL) { [weak self] result in
+        NetworkManager.shared.fetchImage(from: meal.imageURL) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.mealImageView.image = UIImage(data: imageData)

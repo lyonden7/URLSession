@@ -20,6 +20,7 @@
 		28EFE793296A657E0060B854 /* MealViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE792296A657E0060B854 /* MealViewCell.swift */; };
 		28EFE795296ACF300060B854 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE794296ACF300060B854 /* Meal.swift */; };
 		28EFE799296BEE070060B854 /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE798296BEE070060B854 /* MealsViewController.swift */; };
+		28EFE79B296C0E020060B854 /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE79A296C0E020060B854 /* MealDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		28EFE792296A657E0060B854 /* MealViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewCell.swift; sourceTree = "<group>"; };
 		28EFE794296ACF300060B854 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		28EFE798296BEE070060B854 /* MealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
+		28EFE79A296C0E020060B854 /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				28EFE77E2964E6510060B854 /* Category.swift */,
 				28EFE794296ACF300060B854 /* Meal.swift */,
+				28EFE79A296C0E020060B854 /* MealDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				28EFE793296A657E0060B854 /* MealViewCell.swift in Sources */,
 				28EFE795296ACF300060B854 /* Meal.swift in Sources */,
 				28EFE78A29665F800060B854 /* CategoriesViewController.swift in Sources */,
+				28EFE79B296C0E020060B854 /* MealDetail.swift in Sources */,
 				28EFE7882966570E0060B854 /* NetworkManager.swift in Sources */,
 				28EFE77F2964E6510060B854 /* Category.swift in Sources */,
 				28EFE78D29665FC00060B854 /* CategoryViewCell.swift in Sources */,

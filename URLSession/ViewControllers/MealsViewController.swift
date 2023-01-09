@@ -18,8 +18,8 @@ class MealsViewController: UITableViewController {
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "\(category.name) meals"
         fetchMeals()
-        print(Link.mealsURL.rawValue + category.categoryName)
     }
 
     // MARK: - Table view data source
@@ -68,7 +68,7 @@ extension MealsViewController {
 // MARK: - Networking
 extension MealsViewController {
     private func fetchMeals() {
-        let url = Link.mealsURL.rawValue + category.categoryName
+        let url = Link.mealsURL.rawValue + category.name
         NetworkManager.shared.fetch(Meals.self, from: url) { [weak self] result in
             switch result {
             case .success(let meals):

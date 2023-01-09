@@ -6,14 +6,14 @@
 //
 
 struct Meal: Decodable {
-    let mealID: String
-    let mealName: String
-    let mealImageURL: String
+    let id: String
+    let name: String
+    let imageURL: String
 
     enum CodingKeys: String, CodingKey {
-        case mealID = "idMeal"
-        case mealName = "strMeal"
-        case mealImageURL = "strMealThumb"
+        case id = "idMeal"
+        case name = "strMeal"
+        case imageURL = "strMealThumb"
     }
 }
 
