@@ -18,6 +18,8 @@
 		28EFE78D29665FC00060B854 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE78C29665FC00060B854 /* CategoryViewCell.swift */; };
 		28EFE791296A5A960060B854 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE790296A5A960060B854 /* CategoryDetailViewController.swift */; };
 		28EFE793296A657E0060B854 /* MealViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE792296A657E0060B854 /* MealViewCell.swift */; };
+		28EFE795296ACF300060B854 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE794296ACF300060B854 /* Meal.swift */; };
+		28EFE799296BEE070060B854 /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE798296BEE070060B854 /* MealsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		28EFE78C29665FC00060B854 /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		28EFE790296A5A960060B854 /* CategoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewController.swift; sourceTree = "<group>"; };
 		28EFE792296A657E0060B854 /* MealViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewCell.swift; sourceTree = "<group>"; };
+		28EFE794296ACF300060B854 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		28EFE798296BEE070060B854 /* MealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				28EFE77E2964E6510060B854 /* Category.swift */,
+				28EFE794296ACF300060B854 /* Meal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			children = (
 				28EFE78929665F800060B854 /* CategoriesViewController.swift */,
 				28EFE790296A5A960060B854 /* CategoryDetailViewController.swift */,
+				28EFE798296BEE070060B854 /* MealsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -209,10 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EFE799296BEE070060B854 /* MealsViewController.swift in Sources */,
 				28EFE791296A5A960060B854 /* CategoryDetailViewController.swift in Sources */,
 				28EFE76A2964E2080060B854 /* AppDelegate.swift in Sources */,
 				28EFE76C2964E2080060B854 /* SceneDelegate.swift in Sources */,
 				28EFE793296A657E0060B854 /* MealViewCell.swift in Sources */,
+				28EFE795296ACF300060B854 /* Meal.swift in Sources */,
 				28EFE78A29665F800060B854 /* CategoriesViewController.swift in Sources */,
 				28EFE7882966570E0060B854 /* NetworkManager.swift in Sources */,
 				28EFE77F2964E6510060B854 /* Category.swift in Sources */,

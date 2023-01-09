@@ -152,16 +152,16 @@
             </objects>
             <point key="canvasLocation" x="2135.625" y="748.94366197183103"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Meals View Controller-->
         <scene sceneID="ony-Wy-CX5">
             <objects>
-                <tableViewController id="KaW-Fe-8mF" sceneMemberID="viewController">
+                <tableViewController id="KaW-Fe-8mF" customClass="MealsViewController" customModule="URLSession" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="a2Y-bh-ucj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mealCell" rowHeight="60" id="jyQ-pB-6f6" customClass="MealViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mealCell" rowHeight="60" id="jyQ-pB-6f6" customClass="MealViewCell" customModule="URLSession" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jyQ-pB-6f6" id="cLs-Kx-Sp6">
@@ -203,9 +203,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="mealIDLabel" destination="KBe-zb-XHI" id="U5D-lU-INl"/>
+                                    <outlet property="mealIDLabel" destination="KBe-zb-XHI" id="vJF-jD-reQ"/>
                                     <outlet property="mealImageView" destination="7k9-ud-noa" id="uU6-We-f6K"/>
-                                    <outlet property="mealNameLabel" destination="uHf-IX-HTh" id="TyZ-lR-bHk"/>
+                                    <outlet property="mealNameLabel" destination="uHf-IX-HTh" id="euD-7S-LxL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -1,53 +1,61 @@
 //
-//  CategoriesViewController.swift
+//  MealsViewController.swift
 //  URLSession
 //
-//  Created by Денис Васильев on 05.01.2023.
+//  Created by Денис Васильев on 09.01.2023.
 //
 
 import UIKit
 
-class CategoriesViewController: UITableViewController {
+class MealsViewController: UITableViewController {
+
+    // MARK: - Public Properties
+    var category: Category!
     
     // MARK: - Private Properties
-    private var categories: [Category] = []
-
+    private var meals: [Meal] = []
+    
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchCategories()
+        fetchMeals()
+        print(Link.mealsURL.rawValue + category.categoryName)
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        categories.count
+        meals.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: "categoryCell",
+            withIdentifier: "mealCell",
             for: indexPath
-        ) as? CategoryViewCell
+        ) as? MealViewCell
         else {
             return UITableViewCell()
         }
 
-        let category = categories[indexPath.row]
-        cell.configure(with: category)
+        let meal = meals[indexPath.row]
+        cell.configure(wiht: meal)
 
         return cell
     }
-    
+
+    /*
     // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let categoryDetailVC = segue.destination as? CategoryDetailViewController else { return }
-        guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        categoryDetailVC.category = categories[indexPath.row]
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
+    */
+
 }
 
 // MARK: - Table View Delegate
-extension CategoriesViewController {
+extension MealsViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         60
     }
@@ -58,12 +66,13 @@ extension CategoriesViewController {
 }
 
 // MARK: - Networking
-extension CategoriesViewController {
-    private func fetchCategories() {
-        NetworkManager.shared.fetch(Categories.self, from: Link.categoriesURL.rawValue) { [weak self] result in
+extension MealsViewController {
+    private func fetchMeals() {
+        let url = Link.mealsURL.rawValue + category.categoryName
+        NetworkManager.shared.fetch(Meals.self, from: url) { [weak self] result in
             switch result {
-            case .success(let categories):
-                self?.categories = categories.categories
+            case .success(let meals):
+                self?.meals = meals.meals
                 self?.tableView.reloadData()
             case .failure(let error):
                 print(error)
@@ -71,5 +80,3 @@ extension CategoriesViewController {
         }
     }
 }
-
-

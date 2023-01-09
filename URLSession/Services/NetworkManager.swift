@@ -9,7 +9,7 @@ import Foundation
 
 enum Link: String {
     case categoriesURL = "https://www.themealdb.com/api/json/v1/1/categories.php"
-//    case categoryURL = "www.themealdb.com/api/json/v1/1/filter.php?c="
+    case mealsURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
 //    case ingredientsURL = "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
 }
 

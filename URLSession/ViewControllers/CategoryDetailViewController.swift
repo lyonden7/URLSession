@@ -18,7 +18,6 @@ class CategoryDetailViewController: UIViewController {
         }
     }
     
-    
     // MARK: - Public Properties
     var category: Category!
     
@@ -26,6 +25,12 @@ class CategoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let mealVC = segue.destination as? MealsViewController else { return }
+        mealVC.category = category
     }
 }
 
