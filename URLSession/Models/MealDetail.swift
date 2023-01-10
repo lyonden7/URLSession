@@ -12,21 +12,21 @@ struct MealDetail: Decodable {
     let area: String
     let instructions: String
     let imageURL: String
-    let ingredient1: String
-    let ingredient2: String
-    let ingredient3: String
-    let ingredient4: String
-    let ingredient5: String
-    let ingredient6: String
-    let ingredient7: String
-    let ingredient8: String
-    let ingredient9: String
-    let ingredient10: String
-    let ingredient11: String
-    let ingredient12: String
-    let ingredient13: String
-    let ingredient14: String
-    let ingredient15: String
+    let ingredient1: String?
+    let ingredient2: String?
+    let ingredient3: String?
+    let ingredient4: String?
+    let ingredient5: String?
+    let ingredient6: String?
+    let ingredient7: String?
+    let ingredient8: String?
+    let ingredient9: String?
+    let ingredient10: String?
+    let ingredient11: String?
+    let ingredient12: String?
+    let ingredient13: String?
+    let ingredient14: String?
+    let ingredient15: String?
     let measure1: String
     let measure2: String
     let measure3: String
