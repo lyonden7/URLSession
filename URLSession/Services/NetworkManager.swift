@@ -7,18 +7,21 @@
 
 import Foundation
 
+// MARK: - Links
 enum Link: String {
     case categoriesURL = "https://www.themealdb.com/api/json/v1/1/categories.php"
     case mealsURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
     case mealDetailURL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
 }
 
+// MARK: - Errors
 enum NetworkError: Error {
     case invalidURL
     case noData
     case decodingError
 }
 
+// MARK: - Class - NetworkManager
 class NetworkManager {
     static let shared = NetworkManager()
     

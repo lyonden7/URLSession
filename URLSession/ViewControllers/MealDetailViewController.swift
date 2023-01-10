@@ -166,7 +166,6 @@ extension MealDetailViewController {
     
     private func getMeasures() {
         guard let meal = mealDetails.first else { return }
-        
         mealMeasures = [
             meal.measure1,
             meal.measure2,

@@ -75,7 +75,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asu-SD-Nd0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2899" y="749"/>
+            <point key="canvasLocation" x="3896.25" y="748.94366197183103"/>
         </scene>
         <!--Category Detail View Controller-->
         <scene sceneID="9nP-73-h88">
@@ -132,12 +132,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4LH-Zh-IEW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3646.875" y="748.94366197183103"/>
+            <point key="canvasLocation" x="4644.375" y="748.94366197183103"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Categories-->
         <scene sceneID="6jo-1q-YAb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h95-0v-dKy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Categories" image="folder" catalog="system" id="VsH-fn-Gi7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="xBr-WK-hTS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
@@ -150,7 +151,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzj-jE-rsU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2135.625" y="748.94366197183103"/>
+            <point key="canvasLocation" x="3133.125" y="748.94366197183103"/>
         </scene>
         <!--Meals View Controller-->
         <scene sceneID="ony-Wy-CX5">
@@ -219,7 +220,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXw-Dj-sjH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4442" y="749"/>
+            <point key="canvasLocation" x="5439.375" y="748.94366197183103"/>
         </scene>
         <!--Meal Detail View Controller-->
         <scene sceneID="5xN-sJ-8Q1">
@@ -365,10 +366,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="am4-Y1-dm6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5209" y="749"/>
+            <point key="canvasLocation" x="6206.25" y="748.94366197183103"/>
         </scene>
     </scenes>
     <resources>
+        <image name="folder" catalog="system" width="128" height="96"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -15,6 +15,7 @@ class CategoriesViewController: UITableViewController {
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 60
         fetchCategories()
     }
 
@@ -48,10 +49,6 @@ class CategoriesViewController: UITableViewController {
 
 // MARK: - Table View Delegate
 extension CategoriesViewController {
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        60
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }

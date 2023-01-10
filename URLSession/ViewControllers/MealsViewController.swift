@@ -19,6 +19,7 @@ class MealsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "\(category.name) meals"
+        tableView.rowHeight = 60
         fetchMeals()
     }
 
@@ -52,10 +53,6 @@ class MealsViewController: UITableViewController {
 
 // MARK: - Table View Delegate
 extension MealsViewController {
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        60
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
