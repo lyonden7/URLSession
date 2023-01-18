@@ -25,6 +25,13 @@ class CategoriesViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let categoryDetailVC = segue.destination as? CategoryDetailViewController else { return }
+        guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+        categoryDetailVC.category = categories[indexPath.item]
+    }
 }
 
 // MARK: - UICollectionViewDataSource

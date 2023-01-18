@@ -30,7 +30,7 @@
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCell" id="g92-iF-pv0" customClass="CategoryViewCell" customModule="URLSession" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="97.5" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bay-Ms-f7S" customClass="CategoryViewCell" customModule="URLSession" customModuleProvider="target">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bay-Ms-f7S" customClass="CategoryViewCell" customModule="URLSession" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="97.5" height="128"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
