@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		287A960D2976E0AA00FEAA9A /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A960C2976E0AA00FEAA9A /* TestCollectionViewController.swift */; };
+		287A961B29775E4500FEAA9A /* TestViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A961A29775E4500FEAA9A /* TestViewCell.swift */; };
 		28EFE76A2964E2080060B854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE7692964E2080060B854 /* AppDelegate.swift */; };
 		28EFE76C2964E2080060B854 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE76B2964E2080060B854 /* SceneDelegate.swift */; };
 		28EFE7712964E2080060B854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28EFE76F2964E2080060B854 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		287A960C2976E0AA00FEAA9A /* TestCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
+		287A961A29775E4500FEAA9A /* TestViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewCell.swift; sourceTree = "<group>"; };
 		28EFE7662964E2080060B854 /* URLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EFE7692964E2080060B854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28EFE76B2964E2080060B854 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				28EFE790296A5A960060B854 /* CategoryDetailViewController.swift */,
 				28EFE798296BEE070060B854 /* MealsViewController.swift */,
 				28EFE79C296C3A7E0060B854 /* MealDetailViewController.swift */,
+				287A960C2976E0AA00FEAA9A /* TestCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				28EFE79E296D74CB0060B854 /* MealDetailViews */,
 				28EFE78C29665FC00060B854 /* CategoryViewCell.swift */,
 				28EFE792296A657E0060B854 /* MealViewCell.swift */,
+				287A961A29775E4500FEAA9A /* TestViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,11 +249,13 @@
 				28EFE76C2964E2080060B854 /* SceneDelegate.swift in Sources */,
 				28EFE793296A657E0060B854 /* MealViewCell.swift in Sources */,
 				28EFE7A0296D75080060B854 /* MealImageViewCell.swift in Sources */,
+				287A961B29775E4500FEAA9A /* TestViewCell.swift in Sources */,
 				28EFE795296ACF300060B854 /* Meal.swift in Sources */,
 				28EFE78A29665F800060B854 /* CategoriesViewController.swift in Sources */,
 				28EFE79B296C0E020060B854 /* MealDetail.swift in Sources */,
 				28EFE7882966570E0060B854 /* NetworkManager.swift in Sources */,
 				28EFE77F2964E6510060B854 /* Category.swift in Sources */,
+				287A960D2976E0AA00FEAA9A /* TestCollectionViewController.swift in Sources */,
 				28EFE78D29665FC00060B854 /* CategoryViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
