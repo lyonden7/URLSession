@@ -7,54 +7,83 @@
 
 import UIKit
 
-class MealsViewController: UITableViewController {
-
+class MealsViewController: UIViewController {
+    
+    // MARK: - IB Outlets
+    @IBOutlet var collectionView: UICollectionView!
+    
     // MARK: - Public Properties
     var category: Category!
     
     // MARK: - Private Properties
+    private let itemsPerRow: CGFloat = 2
+    private let sectionInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+    
     private var meals: [Meal] = []
     
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "\(category.name) meals"
-        tableView.rowHeight = 60
         fetchMeals()
-    }
-
-    // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        meals.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: "mealCell",
-            for: indexPath
-        ) as? MealViewCell
-        else {
-            return UITableViewCell()
-        }
-
-        let meal = meals[indexPath.row]
-        cell.configure(wiht: meal)
-
-        return cell
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let mealDetailVC = segue.destination as? MealDetailViewController else { return }
-        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
         mealDetailVC.meal = meals[indexPath.row]
     }
 }
 
-// MARK: - Table View Delegate
-extension MealsViewController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+// MARK: - UICollectionViewDataSource
+extension MealsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        meals.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "mealCell",
+            for: indexPath
+        ) as? MealViewCell
+        else {
+            return UICollectionViewCell()
+        }
+        
+        cell.layer.cornerRadius = 15
+        cell.layer.borderColor = UIColor.systemGray3.cgColor
+        cell.layer.borderWidth = 1
+        
+        let meal = meals[indexPath.row]
+        cell.configure(with: meal)
+    
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension MealsViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let paddingWidth = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = collectionView.frame.width - paddingWidth
+        let widthPerItem = availableWidth / itemsPerRow
+        let heightPerItem = widthPerItem * 1.3
+        return CGSize(width: widthPerItem, height: heightPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        sectionInsets.left
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        sectionInsets.left
     }
 }
 
@@ -66,7 +95,7 @@ extension MealsViewController {
             switch result {
             case .success(let meals):
                 self?.meals = meals.meals
-                self?.tableView.reloadData()
+                self?.collectionView.reloadData()
             case .failure(let error):
                 print(error)
             }

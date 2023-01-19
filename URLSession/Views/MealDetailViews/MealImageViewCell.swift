@@ -10,7 +10,11 @@ import UIKit
 class MealImageViewCell: UITableViewCell {
 
     // MARK: - IB Outlets
-    @IBOutlet var mealImageView: UIImageView!
+    @IBOutlet var mealImageView: UIImageView! {
+        didSet {
+            mealImageView.layer.cornerRadius = 15
+        }
+    }
     
     // MARK: - Configure cell
     func configure(with meal: MealDetail) {

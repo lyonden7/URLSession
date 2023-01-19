@@ -7,15 +7,19 @@
 
 import UIKit
 
-class MealViewCell: UITableViewCell {
+class MealViewCell: UICollectionViewCell {
 
     // MARK: - IB Outlets
-    @IBOutlet var mealImageView: UIImageView!
     @IBOutlet var mealNameLabel: UILabel!
     @IBOutlet var mealIDLabel: UILabel!
+    @IBOutlet var mealImageView: UIImageView! {
+        didSet {
+            mealImageView.layer.cornerRadius = 15
+        }
+    }
     
     // MARK: - Configure cell
-    func configure(wiht meal: Meal) {
+    func configure(with meal: Meal) {
         mealNameLabel.text = meal.name
         mealIDLabel.text = "ID: \(meal.id)"
         
@@ -27,5 +31,10 @@ class MealViewCell: UITableViewCell {
                 print(error)
             }
         }
+    }
+    
+    // MARK: - Override Methods
+    override func prepareForReuse() {
+        mealImageView.image = nil
     }
 }

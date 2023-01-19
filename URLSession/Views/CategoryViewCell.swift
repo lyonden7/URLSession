@@ -9,11 +9,12 @@ import UIKit
 
 class CategoryViewCell: UICollectionViewCell {
     
+    // MARK: - IB Outlets
     @IBOutlet var categoryNameLabel: UILabel!
     @IBOutlet var categoryIDLabel: UILabel!
     @IBOutlet var categoryImageView: UIImageView! {
         didSet {
-            categoryImageView.layer.cornerRadius = 10
+            categoryImageView.layer.cornerRadius = 15
         }
     }
     
@@ -32,6 +33,7 @@ class CategoryViewCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - Override Methods
     override func prepareForReuse() {
         categoryImageView.image = nil
     }
