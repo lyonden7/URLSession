@@ -2,17 +2,21 @@
 //  CategoryViewCell.swift
 //  URLSession
 //
-//  Created by Денис Васильев on 05.01.2023.
+//  Created by Денис Васильев on 18.01.2023.
 //
 
 import UIKit
 
-class CategoryViewCell: UITableViewCell {
-
+class CategoryViewCell: UICollectionViewCell {
+    
     // MARK: - IB Outlets
-    @IBOutlet var categoryImageView: UIImageView!
     @IBOutlet var categoryNameLabel: UILabel!
     @IBOutlet var categoryIDLabel: UILabel!
+    @IBOutlet var categoryImageView: UIImageView! {
+        didSet {
+            categoryImageView.layer.cornerRadius = 15
+        }
+    }
     
     // MARK: - Configure cell
     func configure(with category: Category) {
@@ -27,5 +31,10 @@ class CategoryViewCell: UITableViewCell {
                 print(error)
             }
         }
+    }
+    
+    // MARK: - Override Methods
+    override func prepareForReuse() {
+        categoryImageView.image = nil
     }
 }
