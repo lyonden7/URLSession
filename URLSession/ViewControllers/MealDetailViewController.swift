@@ -14,7 +14,10 @@ enum CellType: Int, CaseIterable {
     case ingredientCell
 }
 
-class MealDetailViewController: UITableViewController {
+class MealDetailViewController: UIViewController {
+    
+    // MARK: - IB Outlets
+    @IBOutlet var tableView: UITableView!
     
     // MARK: - Public Properties
     var meal: Meal!
@@ -27,16 +30,22 @@ class MealDetailViewController: UITableViewController {
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         fetchMealDetails()
         title = meal.name
     }
+}
 
-    // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
+// MARK: - Table View Data Source
+extension MealDetailViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
         CellType.allCases.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case CellType.instructionsCell.rawValue:
             return "Instructions"
@@ -47,7 +56,7 @@ class MealDetailViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case CellType.ingredientCell.rawValue:
             return mealIngredients.count
@@ -56,7 +65,7 @@ class MealDetailViewController: UITableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let meal = mealDetails.first else { return UITableViewCell() }
         
         if indexPath.section == 0 {
@@ -109,8 +118,8 @@ class MealDetailViewController: UITableViewController {
 }
 
 // MARK: - Table View Delegate
-extension MealDetailViewController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension MealDetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -155,18 +164,13 @@ extension MealDetailViewController {
             meal.ingredient15
         ]
         
-        ingridients.forEach {
-            guard let item = $0 else { return }
-            if item == "" {
-                return
-            }
-            mealIngredients.append(item)
-        }
+        mealIngredients = ingridients.compactMap { $0 }
+            .filter { !$0.isEmpty }
     }
     
     private func getMeasures() {
         guard let meal = mealDetails.first else { return }
-        mealMeasures = [
+        let measures = [
             meal.measure1,
             meal.measure2,
             meal.measure3,
@@ -183,5 +187,7 @@ extension MealDetailViewController {
             meal.measure14,
             meal.measure15
         ]
+        
+        mealMeasures = measures.compactMap { $0 }
     }
 }
