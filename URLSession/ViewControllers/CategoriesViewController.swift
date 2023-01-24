@@ -86,13 +86,13 @@ extension CategoriesViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - Networking
 extension CategoriesViewController {
     private func fetchCategories() {
-        NetworkManager.shared.fetch(Categories.self, from: Link.categoriesURL.rawValue) { [weak self] result in
+        NetworkManager.shared.fetchCategories(from: Link.categoriesURL.rawValue) { [weak self] result in
             switch result {
             case .success(let categories):
-                self?.categories = categories.categories
+                self?.categories = categories
                 self?.collectionView.reloadData()
             case .failure(let error):
-                print(error)
+                print(error.localizedDescription)
             }
         }
     }
