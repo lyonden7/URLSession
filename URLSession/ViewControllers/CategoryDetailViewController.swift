@@ -40,7 +40,7 @@ extension CategoryDetailViewController {
         title = category.name
         categoryDescriptionTextView.text = category.description
         
-        NetworkManager.shared.fetchImage(from: category.imageURL) { [weak self] result in
+        NetworkManager.shared.fetchData(from: category.imageURL) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.categoryImageView.image = UIImage(data: imageData)

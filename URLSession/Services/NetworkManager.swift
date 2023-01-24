@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 // MARK: - Links
 enum Link: String {
@@ -27,43 +28,47 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchImage(from url: String, completion: @escaping(Result<Data, NetworkError>) -> Void) {
-        guard let url = URL(string: url) else {
-            completion(.failure(.invalidURL))
-            return
-        }
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: url) else {
-                completion(.failure(.noData))
-                return
+    /// Метод для загрузки из сети данных типа Category.
+    /// Ручной парсинг JSON
+    func fetchCategories(from url: String, completion: @escaping(Result<[Category], AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    let categories = Category.getCategories(from: value)
+                    completion(.success(categories))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
-            DispatchQueue.main.async {
-                completion(.success(imageData))
-            }
-        }
     }
     
-    func fetch<T: Decodable>(_ type: T.Type, from url: String, completion: @escaping(Result<T, NetworkError>) -> Void) {
-        guard let url = URL(string: url) else {
-            completion(.failure(.invalidURL))
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                completion(.failure(.noData))
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            do {
-                let type = try JSONDecoder().decode(T.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(type))
+    /// Метод для загрузки изображений из сети
+    func fetchData(from url: String, completion: @escaping(Result<Data, AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseData { dataRequest in
+                switch dataRequest.result {
+                case .success(let data):
+                    completion(.success(data))
+                case .failure(let error):
+                    completion(.failure(error))
                 }
-            } catch {
-                completion(.failure(.decodingError))
             }
-        }.resume()
+    }
+    
+    /// Метод для загрузки данных из сети
+    func fetch<T: Decodable>(_ type: T.Type, from url: String, completion: @escaping(Result<T, AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseDecodable(of: T.self) { dataRequest in
+                switch dataRequest.result {
+                case .success(let data):
+                    completion(.success(data))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
     }
 }

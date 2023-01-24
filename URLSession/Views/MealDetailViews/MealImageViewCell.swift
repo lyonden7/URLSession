@@ -18,7 +18,7 @@ class MealImageViewCell: UITableViewCell {
     
     // MARK: - Configure cell
     func configure(with meal: MealDetail) {
-        NetworkManager.shared.fetchImage(from: meal.imageURL) { [weak self] result in
+        NetworkManager.shared.fetchData(from: meal.imageURL) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.mealImageView.image = UIImage(data: imageData)

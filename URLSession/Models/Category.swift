@@ -11,14 +11,16 @@ struct Category: Decodable {
     let imageURL: String
     let description: String
     
-    enum CodingKeys: String, CodingKey {
-        case id = "idCategory"
-        case name = "strCategory"
-        case imageURL = "strCategoryThumb"
-        case description = "strCategoryDescription"
+    init(categoryData: [String: Any]) {
+        id = categoryData["idCategory"] as? String ?? ""
+        name = categoryData["strCategory"] as? String ?? ""
+        imageURL = categoryData["strCategoryThumb"] as? String ?? ""
+        description = categoryData["strCategoryDescription"] as? String ?? ""
     }
-}
-
-struct Categories: Decodable {
-    let categories: [Category]
+    
+    static func getCategories(from value: Any) -> [Category] {
+        guard let value = value as? [String: [Any]] else { return [] }
+        guard let categoriesData = value.values.first as? [[String: Any]] else { return [] }
+        return categoriesData.compactMap { Category(categoryData: $0) }
+    }
 }
