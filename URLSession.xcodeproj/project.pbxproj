@@ -10,6 +10,7 @@
 		287A960D2976E0AA00FEAA9A /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A960C2976E0AA00FEAA9A /* CategoriesViewController.swift */; };
 		287A961B29775E4500FEAA9A /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A961A29775E4500FEAA9A /* CategoryViewCell.swift */; };
 		28AA6855297B3F12008F1E65 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 28AA6854297B3F12008F1E65 /* Alamofire */; };
+		28AA688B2989D84D008F1E65 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA688A2989D84D008F1E65 /* DataStore.swift */; };
 		28EFE76A2964E2080060B854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE7692964E2080060B854 /* AppDelegate.swift */; };
 		28EFE76C2964E2080060B854 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFE76B2964E2080060B854 /* SceneDelegate.swift */; };
 		28EFE7712964E2080060B854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28EFE76F2964E2080060B854 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		287A960C2976E0AA00FEAA9A /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		287A961A29775E4500FEAA9A /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
+		28AA688A2989D84D008F1E65 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		28EFE7662964E2080060B854 /* URLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EFE7692964E2080060B854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28EFE76B2964E2080060B854 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				28EFE7872966570E0060B854 /* NetworkManager.swift */,
+				28AA688A2989D84D008F1E65 /* DataStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				28EFE79B296C0E020060B854 /* MealDetail.swift in Sources */,
 				28EFE7882966570E0060B854 /* NetworkManager.swift in Sources */,
 				28EFE77F2964E6510060B854 /* Category.swift in Sources */,
+				28AA688B2989D84D008F1E65 /* DataStore.swift in Sources */,
 				287A960D2976E0AA00FEAA9A /* CategoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
